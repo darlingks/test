@@ -10,15 +10,15 @@
 
 	请求参数：
 			参数名			数据类型			备注
-			index 			tinyint(11)		搜索类型（如index=1:根据业务员id查询	index=2:根据客户id查询）
-			id				int(11)			业务id
+			index 			tinyint(11)		搜索类型（1:根据业务员id查询	2:根据客户id查询）
+			id			int(11)			业务id
 
 	返回参数：
 			参数名			数据类型			备注
-			id 				int(11)			项目id
-			name 			varchar(128)	项目名称
+			id 			int(11)			项目id
+			name 			varchar(128)		项目名称
 			client_id 		int(11)			客户id
-			c_real_name		varchar(128)	客户姓名（client表关联查询）
+			c_real_name		varchar(128)		客户姓名（client表关联查询）
 			status 			tinyint(4)		项目状态（1-待开工2-施工中3-验收中4-已完工）
 			money			int(11)			合同金额
 			retainage		int(11)			尾款（金额减去finance的钱）
@@ -37,10 +37,10 @@
 
 	返回参数：
 			参数名			数据类型			备注
-			id 				int(11)			付款记录id
+			id 			int(11)			付款记录id
 			created_at		date			付款创建日期
-			payment_time	date			付款日期
-			payment_amount	int(11)			付款金额
+			payment_time		date			付款日期
+			payment_amount		int(11)			付款金额
 			status			tinyint(1)		审核状态（1-待审批2-已审批3-不通过）
 			comment			longtext		备注
 
@@ -56,7 +56,7 @@
 
 	请求参数：
 			参数名			数据类型			备注
-			id 				int(11)			付款记录id
+			id 			int(11)			付款记录id
 			ret_check		tinyint(1)		审核结果（1-通过	2-未通过）
 
 	返回参数：成功返回0	失败返回-1	
@@ -75,7 +75,7 @@
 			参数名			数据类型			备注
 			project_id 		int(11)			项目id
 			created_at		datetime		汇款创建时间（用户自定义）
-			payment_amount	int(11)			付款金额
+			payment_amount		int(11)			付款金额
 			comment			longtext		备注
 
 	返回参数：成功返回0	失败返回-1
@@ -119,12 +119,12 @@
 	返回参数：
 			参数名			数据类型			备注
 			client_id 		int(11)			客户id
-			wechat			varchar(128)	绑定微信(公众号自带openid)
+			wechat			varchar(128)		绑定微信(公众号自带openid)
 			created_at		datetime		客户注册日期
-			unique_name		varchar(128)	用户名
-			c_real_name		varchar(128)	客户姓名
-			contact			varchar(128)	联系方式
-			description		varchar(1024)	描述
+			unique_name		varchar(128)		用户名
+			c_real_name		varchar(128)		客户姓名
+			contact			varchar(128)		联系方式
+			description		varchar(1024)		描述
 
 	备注信息：
 
@@ -139,11 +139,11 @@
 
 	请求参数：
 			参数名			数据类型			备注
-			unique_name		varchar(128)	用户名
-			c_real_name		varchar(128)	客户姓名
-			contact			varchar(128)	联系方式
-			description		varchar(1024)	描述
-			salesman_id 	int(11)			业务员id
+			unique_name		varchar(128)		用户名
+			c_real_name		varchar(128)		客户姓名
+			contact			varchar(128)		联系方式
+			description		varchar(1024)		描述
+			salesman_id 		int(11)			业务员id
 
 	返回参数：成功返回0	失败返回-1
 
@@ -162,9 +162,9 @@
 
 	返回参数：
 			参数名			数据类型			备注
-			id				int(11)			施工计划id
-			c_name 			varchar(255)	施工名称
-			address 		varchar(255)	施工地址
+			id			int(11)			施工计划id
+			c_name 			varchar(255)		施工名称
+			address 		varchar(255)		施工地址
 			status 			tinyint(4)		施工状态（1-开始	2-施工	3-验收	4-完工	5-返工）
 
 	备注信息：插入一条数据到client表		created_at、updated_at取当前时间		wechat默认null
